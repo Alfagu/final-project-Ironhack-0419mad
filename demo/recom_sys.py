@@ -88,7 +88,7 @@ def get_recommendations(title):
     movie_indices = [i[0] for i in sim_scores]
     return titles.iloc[movie_indices]
 
-consult = input(get_recommendations: "Enter your Movie")
+consult = input("Enter your Movie", get_recommendations)
 
 print(consult)
 
