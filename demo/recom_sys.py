@@ -91,4 +91,3 @@ def get_recommendations(title):
 consult = input("Enter your Movie: ")
 
 print(get_recommendations(consult))
-
