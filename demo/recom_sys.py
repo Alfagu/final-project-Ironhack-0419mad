@@ -88,4 +88,7 @@ def get_recommendations(title):
     movie_indices = [i[0] for i in sim_scores]
     return titles.iloc[movie_indices]
 
-get_recommendations('The Godfather').head(10)
+consult = input(get_recommendations: "Enter your Movie")
+
+print(consult)
+
