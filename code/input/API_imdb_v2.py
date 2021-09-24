@@ -1,6 +1,9 @@
 # importing the module
 import imdb
-  
+from PIL import Image
+import requests as re
+from io import BytesIO
+
 # creating instance of IMDb
 ia = imdb.IMDb()
 
@@ -12,6 +15,12 @@ movie_ID = (movies[0].movieID)
   
 # getting information
 query = ia.get_movie(movie_ID)
+
+#Trying to get the movie poster
+url = re.get(query['cover url'])            
+
+img = Image.open(BytesIO(url.content))
+img.show()
 
 # printing the query name or Title
 print("Title:",query)
@@ -34,9 +43,10 @@ genre = query['genre']
 print("Genre:", genre)
 
 # Then we want to have the synopsis displaid 
-sysnosis = query['synopsis']
-print("Synopsis:", sysnosis)
+plot = query['plot'][0]
+if plot == []: 
+    print("Plot: No Data")
+else:
+    print("Plot:", plot)
 
 quit()
-
-
