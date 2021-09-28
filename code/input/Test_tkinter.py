@@ -1,12 +1,19 @@
-from tkinter import *
-import imdb
+# importing tkinter
+import tkinter as tk
 
-ia = imdb.IMDb()
+def one():
+  movie_func.insert(input())
 
-def movie_ID():
-  for movie in ia.get_movie(input("input movie:")):
-      m_ID = movie[0].m_ID
-      query = ia.get_movie(m_ID)
-  print(query)
-
-movie_ID()
+# create root window
+root = tk.Tk()
+ 
+# root window title and dimension
+root.title("Film Catcher")
+root.geometry("380x400")
+ 
+# creating button
+btn = tk.Button(root, text="Press", command=lambda: function.one())
+btn.pack()
+ 
+# running the main loop
+root.mainloop()
