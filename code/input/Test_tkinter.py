@@ -1,19 +1,23 @@
 # importing tkinter
-import tkinter as tk
+from tkinter import *
+from subprocess import *
 
-def one():
-  movie_func.insert(input())
 
-# create root window
-root = tk.Tk()
- 
-# root window title and dimension
-root.title("Film Catcher")
-root.geometry("380x400")
- 
-# creating button
-btn = tk.Button(root, text="Press", command=lambda: function.one())
-btn.pack()
- 
-# running the main loop
-root.mainloop()
+print("Hello world")
+
+
+def func():
+    proc = Popen(movie_func, stdout=PIPE, shell=True)
+    proc = proc.communicate()
+    output.insert(END, proc)
+
+Master = Tk()
+Check = Button(Master, text="Display output", command=func)
+Quit = Button(Master, text="Exit", fg="red", command=Master.quit)
+output = Text(Master, width=40, height=8)
+
+Check.pack(padx=20, pady=8)
+Quit.pack(padx=20, pady=18)
+output.pack()
+
+Master.mainloop()
