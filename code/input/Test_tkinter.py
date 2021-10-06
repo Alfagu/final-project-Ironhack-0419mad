@@ -1,9 +1,7 @@
 # importing tkinter
 from tkinter import *
 from subprocess import *
-
-
-print("Hello world")
+from API_imdb_v3 import *
 
 
 def func():
