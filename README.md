@@ -1,4 +1,4 @@
-# Movie Founder :film_projector: :file_cabinet:
+# Movie Finder :film_projector: :file_cabinet:
 
 **Alfonso Aguado**
 
